@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // Install lucide-react
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,16 +15,22 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          {["Home", "Features", "Pricing", "Contact"].map((item) => (
-            <Link 
-              key={item}
-              to={item === "Home" ? "/" : `/${item.toLowerCase()}`} 
-              className="text-sm font-semibold text-slate-600 hover:text-green-600 transition-colors"
-            >
-              {item}
-            </Link>
-          ))}
-        </div>
+  {[
+    { name: "Home", path: "/" },
+    { name: "Features", path: "/features" },
+    { name: "About", path: "/about" },
+    { name: "Pricing", path: "/pricing" },
+    { name: "Contact", path: "/contact" }
+  ].map((item) => (
+    <Link 
+      key={item.name}
+      to={item.path} 
+      className="text-sm font-semibold text-slate-600 hover:text-green-600 transition-colors"
+    >
+      {item.name}
+    </Link>
+  ))}
+</div>
 
         {/* CTA Button */}
         <div className="hidden md:block">
