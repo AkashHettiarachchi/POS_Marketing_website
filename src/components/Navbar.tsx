@@ -34,9 +34,11 @@ const Navbar = () => {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <button className="px-5 py-2.5 bg-slate-900 text-white text-sm rounded-lg font-bold hover:bg-slate-800 transition-all shadow-sm active:scale-95">
-            Book a Demo
-          </button>
+          <Link to="/bookdemo">
+           <button className="px-5 py-2.5 bg-slate-900 text-white text-sm rounded-lg font-bold hover:bg-slate-800 transition-all shadow-sm active:scale-95">
+             Book a Demo
+           </button>
+         </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -52,7 +54,11 @@ const Navbar = () => {
         <div className="md:hidden bg-white border-b border-slate-100 px-6 py-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300">
           <Link to="/" className="font-bold text-slate-900" onClick={() => setIsOpen(false)}>Home</Link>
           <Link to="/features" className="font-bold text-slate-900" onClick={() => setIsOpen(false)}>Features</Link>
-          <button className="w-full py-3 bg-green-600 text-white rounded-xl font-bold">Book Demo</button>
+          <Link to="/bookdemo">
+           <button className="px-5 py-2.5 bg-slate-900 text-white text-sm rounded-lg font-bold hover:bg-slate-800 transition-all shadow-sm active:scale-95">
+            Book a Demo
+           </button>
+          </Link>
         </div>
       )}
     </nav>

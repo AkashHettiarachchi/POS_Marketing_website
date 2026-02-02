@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { 
   Zap, Package, BarChart3, 
   CreditCard, Store, Cloud, 
@@ -67,12 +68,16 @@ const Home: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="px-8 py-4 bg-green-600 text-white rounded-xl font-bold text-lg hover:bg-green-700 hover:shadow-xl hover:shadow-green-100 transition-all flex items-center justify-center gap-2">
-                  Start Free Trial <ArrowRight size={20} />
-                </button>
-                <button className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all">
-                  Contact Sales
-                </button>
+                <Link to="/pricing">
+                 <button className="px-8 py-4 bg-green-600 text-white rounded-xl font-bold text-lg hover:bg-green-700 hover:shadow-xl hover:shadow-green-100 transition-all flex items-center justify-center gap-2">
+                   Start Free Trial <ArrowRight size={20} />
+                 </button>
+                </Link>
+                <Link to="/contact">
+                 <button className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all">
+                   Contact Sales
+                 </button>
+                </Link>
               </div>
 
               <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-6">
